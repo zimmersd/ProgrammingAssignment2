@@ -7,10 +7,10 @@
 ## 4.  get the value of the inverse
 
 makeCacheMatrix <- function(input_matrix = matrix()) {
-    v <- NULL              # v is the inverse of a matrix and is set to NULL each time makeCacheMatrix is called
-    set <- function(y) {   # takes an input matrix (assume invertible, and thus square)
-        input_matrix <<- y # saves the input matrix
-        v <<- NULL         # resets the inverse to NULL
+    v <- NULL                      # v is the inverse of a matrix and is set to NULL each time makeCacheMatrix is called
+    set <- function(new_value) {   # this function or method lets you reuse the object
+        input_matrix <<- new_value # by setting the stored inverse matrix "pointer" previously used to NULL
+        v <<- NULL                 # and setting a new value for input_matrix
     }
     get <- function() {input_matrix} ## this function returns or "gets" the value of input_matrix
     setinverse <- function(storeValue) {v <<- storeValue} # this is called by cacheSolve() during
